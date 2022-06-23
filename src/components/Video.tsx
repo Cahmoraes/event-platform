@@ -41,7 +41,8 @@ export function Video({ lessonSlug }: VideoProps) {
   const { data } = useQuery<GetLessonBySlugResponse>(GET_LESSON_BY_SLU_QUERY, {
     variables: {
       slug: lessonSlug
-    }
+    },
+    fetchPolicy: 'no-cache'
   })
 
   if (!data) {
